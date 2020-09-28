@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "sports-management-ui": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sports-management-ui"
+    }
+  },
+  "defaultProject": "sports-management-ui",
+  "cli": {
+    "analytics": "016d84fe-bf22-4c6a-a120-9136d963278f"
+  }
 }
