@@ -8,7 +8,7 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
     <!-- Title -->
-    <a class="navbar-brand" href="#">Sports Management System v.1</a>
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active">Sports Management System v.1</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,27 +18,27 @@
 
         <!-- Home -->
         <li class="nav-item">
-          <a class="nav-link">Home</a>
+          <a class="nav-link" [routerLink]="['home']" routerLinkActive="active"><i class="fa fa-home"></i> Home</a>
         </li>
 
         <!-- Competitors and Games module -->
         <ng-container 
           *ngIf="hasAdminRights() else showEventManagerMenu">
           <li class="nav-item">
-            <a class="nav-link" href="#">Competitors</a>
+            <a class="nav-link" [routerLink]="['competitors']" routerLinkActive="active">Competitors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Games</a>
+            <a class="nav-link" [routerLink]="['games']" routerLinkActive="active">Games</a>
           </li>
         </ng-container>
 
         <!-- Events and Report module -->
         <ng-template #showEventManagerMenu>
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Events</a>
+            <a class="nav-link" [routerLink]="['events']" routerLinkActive="active" tabindex="-1">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Reports</a>
+            <a class="nav-link" [routerLink]="['reports']" routerLinkActive="active" tabindex="-1">Reports</a>
           </li>
         </ng-template>
       </ul>
@@ -55,11 +55,8 @@
     
   <!-- Main -->
   <main role="main" class="container">
-  
     <div class="starter-template">
-      <h1>Bootstrap starter template</h1>
-      <h2>{{ user.signInUserSession.accessToken.payload['cognito:groups'] }}</h2>
-      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <router-outlet></router-outlet>
     </div>
   </main>
   

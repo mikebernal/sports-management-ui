@@ -26,13 +26,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
 # TO DO
 
-1. Configure RouterModule
-2. Wrap RouterModule with Auth
-3. Convert anchor tags to routerLink
-4. Persist user credentials using localStorage
-5. Remove Create Account component
-6. Set Sign In Buttons' width to 100%
-7. Create service layer for admin and event manager
+1. Persist user credentials using localStorage
+2. Remove Create Account component
+3. Set Sign In Buttons' width to 100%
+4. Create service layer for admin and event manager
+5. Create Games component
+6. Create Competitors component
+7. Create Events component
+8. Create Report component
