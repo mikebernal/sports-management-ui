@@ -7,7 +7,7 @@ import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-ampli
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy  {
   user: CognitoUserInterface | undefined;
   authState: AuthState;
 
@@ -39,7 +39,10 @@ export class AppComponent implements OnInit {
         console.log('user is not signed in...');
       }
     });
+  }
 
+  ngOnDestroy() {
+    return onAuthUIStateChange;
   }
 
 }
