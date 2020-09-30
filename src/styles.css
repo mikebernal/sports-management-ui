@@ -1,3 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+/* body {
+  padding-top: 5rem;
+} */
+
+.starter-template {
+  padding: 8rem 1.5rem;
+  text-align: center;
+}
+
+.greeting {
+  color: white;
+  margin-right: 1em;
+}
+
+amplify-authenticator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100vh;
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sportsmanagementui-dev-203614-authRole",
+      "UnauthRoleArn": "arn:aws:iam::680452795123:role/amplify-sportsmanagementui-dev-203614-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::680452795123:role/amplify-sportsmanagementui-dev-203614-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-sportsmanagementui-dev-203614-deployment",
+      "UnauthRoleName": "amplify-sportsmanagementui-dev-203614-unauthRole",
+      "StackName": "amplify-sportsmanagementui-dev-203614",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:680452795123:stack/amplify-sportsmanagementui-dev-203614/5e0ef590-0250-11eb-a785-06e53a7ee108",
+      "AmplifyAppId": "d31tuoie8n79yx"
+    },
+    "categories": {
+      "auth": {
+        "sportsmanagementui03d1ce38": {}
+      }
+    }
+  }
+}

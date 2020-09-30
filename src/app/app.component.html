@@ -1,6 +1,65 @@
-<div>
-  <h1>
-    {{ title }}
-  </h1>
-  <app-game></app-game>
+<amplify-authenticator *ngIf="authState !== 'signedin'">
+  <!-- <amplify-sign-in slot="sign-in" hide-sign-up ></amplify-sign-in> -->
+</amplify-authenticator>
+
+<div *ngIf="authState === 'signedin' && user" class="App">
+  <!-- This is where you application template code goes --> 
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+    <!-- Title -->
+    <a class="navbar-brand" href="#">Sports Management System v.1</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+
+        <!-- Competitors and Games module -->
+        <ng-container *ngIf="isAdmin === 'Admin' else showEventManagerMenu">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Competitors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Games</a>
+          </li>
+        </ng-container>
+
+        <!-- Events and Report module -->
+        <ng-template #showEventManagerMenu>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">Reports</a>
+          </li>
+        </ng-template>
+      </ul>
+      
+      <!-- Greetings -->
+      <form class="form-inline my-2 my-lg-0">
+        <div class="greeting">Hello, {{user.username}}</div>
+
+        <!-- Sign out -->
+        <amplify-sign-out></amplify-sign-out>
+      </form>
+    </div>
+  </nav>
+    
+  <!-- Main -->
+  <main role="main" class="container">
+  
+    <div class="starter-template">
+      <h1>Bootstrap starter template</h1>
+      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+  </main>
+  
 </div>
+  
