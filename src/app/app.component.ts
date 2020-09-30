@@ -7,15 +7,22 @@ import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-ampli
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit, OnDestroy {
-  title = 'amplify-angular-auth';
+export class AppComponent implements OnInit {
   user: CognitoUserInterface | undefined;
   authState: AuthState;
-  isAdmin: string;
 
   constructor(private ref: ChangeDetectorRef) { }
 
-  // Needs to access DOM props only when needed because of authentication rules
+  // Check if user has admin rights
+  hasAdminRights() {
+    // return this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin');
+    if (this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') {
+      return true;
+    }
+
+    return false;
+  }
+
   ngOnInit() {
 
     onAuthUIStateChange((authState, authData) => {
@@ -24,11 +31,9 @@ export class AppComponent implements OnInit, OnDestroy {
       this.ref.detectChanges();
 
       if (authState === AuthState.SignedIn) {
-        this.isAdmin = this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin');
         console.log('user successfully signed in!');
         console.log('user data: ', authData);
         console.log('authState: ', authState);
-        console.log('Has Admin rights: ', this.isAdmin);
       }
       if (!authData) {
         console.log('user is not signed in...');
@@ -37,7 +42,4 @@ export class AppComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy() {
-    return onAuthUIStateChange;
-  }
 }

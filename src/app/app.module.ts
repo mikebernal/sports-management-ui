@@ -8,16 +8,16 @@ import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
 import { AppComponent } from './app.component';
-import { GameComponent } from './game/game.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { GamesComponent } from './games/games.component';
 
 Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GamesComponent
    ],
   imports: [
     BrowserModule,
