@@ -30,6 +30,9 @@ amplify-authenticator {
 [name="secondary-footer-content"] span { 
   display: none;
 }
+[name=secondary-footer-content] span { 
+  display: none;
+}
 
 ::slotted([slot=secondary-footer-content]) span {
   display: none;

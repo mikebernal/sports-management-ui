@@ -26,19 +26,26 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-# TO DO
+# To do
 
-0. Add route guard. Reset route when signedOut
-1. Persist user credentials using localStorage
-2. Remove Create Account components' link
-3. Set Sign In Buttons' width to 100%
-4. Create service for auth, admin, event manager, reports, games, and competitor
-5. Create Games component
-6. Create Competitors component
-7. Create Events component
-8. Create Report component
-9. Create Games module with route
-10. Create Competitors module with route
-11. Create Events module with route
-12. Create Report module with route
-13. Use lazy loading
+0. Add route guard.
+1.Reset route if authState is signedOut
+2. Persist user credentials using localStorage
+3. Remove Create Account components' link
+4. Set Sign In Buttons' width to 100%
+5. Create service layer for:
+   1. auth
+   2. admin
+   3. event manager
+   4. reports
+   5. games
+   6. competitors
+6. ~~Create Games component~~
+7. ~~Create Competitors component~~
+8. ~~Create Events component~~
+9. ~~Create Report component~~
+10. Create Games module with routing
+12. Create Competitors module with routing
+12. Create Events module with routing
+13. Create Report module with routing
+14. Use lazy loading
