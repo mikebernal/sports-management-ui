@@ -23,7 +23,7 @@
 
         <!-- Competitors and Games module -->
         <ng-container 
-          *ngIf="hasAdminRights() else showEventManagerMenu">
+          *ngIf="hasAdminRights else showEventManagerMenu">
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['competitors']" routerLinkActive="active">Competitors</a>
           </li>

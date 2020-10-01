@@ -28,11 +28,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # TO DO
 
+0. Add route guard. Reset route when signedOut
 1. Persist user credentials using localStorage
-2. Remove Create Account component
+2. Remove Create Account components' link
 3. Set Sign In Buttons' width to 100%
-4. Create service layer for admin and event manager
+4. Create service for auth, admin, event manager, reports, games, and competitor
 5. Create Games component
 6. Create Competitors component
 7. Create Events component
 8. Create Report component
+9. Create Games module with route
+10. Create Competitors module with route
+11. Create Events module with route
+12. Create Report module with route
+13. Use lazy loading

@@ -14,13 +14,8 @@ export class AppComponent implements OnInit, OnDestroy  {
   constructor(private ref: ChangeDetectorRef) { }
 
   // Check if user has admin rights
-  hasAdminRights() {
-    // return this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin');
-    if (this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') {
-      return true;
-    }
-
-    return false;
+  get hasAdminRights(): boolean {
+   return (this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') ? true : false;
   }
 
   ngOnInit() {
