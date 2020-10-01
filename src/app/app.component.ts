@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,10 @@ export class AppComponent implements OnInit, OnDestroy  {
   user: CognitoUserInterface | undefined;
   authState: AuthState;
 
-  constructor(private ref: ChangeDetectorRef) { }
+  constructor(
+    private ref: ChangeDetectorRef,
+    private router: Router,
+  ) { }
 
   // Check if user has admin rights
   get hasAdminRights(): boolean {
@@ -30,8 +34,10 @@ export class AppComponent implements OnInit, OnDestroy  {
         console.log('user data: ', authData);
         console.log('authState: ', authState);
       }
+
       if (!authData) {
         console.log('user is not signed in...');
+        this.router.navigate(['']);
       }
     });
   }

@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # To do
 
 0. Add route guard.
-1.Reset route if authState is signedOut
+1. ~~Reset route if authState is signedOut~~
 2. Persist user credentials using localStorage
 3. Remove Create Account components' link
 4. Set Sign In Buttons' width to 100%
@@ -44,8 +44,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 7. ~~Create Competitors component~~
 8. ~~Create Events component~~
 9. ~~Create Report component~~
-10. Create Games module with routing
-12. Create Competitors module with routing
-12. Create Events module with routing
-13. Create Report module with routing
-14. Use lazy loading
+10. ~~Create Games module with routing~~
+12. ~~Create Competitors module with routing~~
+12. ~~Create Events module with routing~~
+13. ~~Create Report module with routing~~
+14. ~~Use lazy loading~~
