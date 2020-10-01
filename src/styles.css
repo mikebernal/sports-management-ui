@@ -25,23 +25,7 @@ amplify-authenticator {
 }
 
 /* Mandy */
-/* [name="secondary-footer-content"] span { css goes here } */
+/* [name=secondary-footer-content] _ngcontent-pot-c72 span { display: none} */
 
-[name="secondary-footer-content"] span { 
-  display: none;
-}
-[name=secondary-footer-content] span { 
-  display: none;
-}
-
-::slotted([slot=secondary-footer-content]) span {
-  display: none;
-}
-
-::slotted([slot=secondary-footer-content]) span {
-  display: none;
-}
-
-slot[name=secondary-footer-content] span { 
-  display: none;
-}
+/* Rene */
+/* slot[name=secondary-footer-content] { display: none} */

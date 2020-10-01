@@ -29,12 +29,14 @@ export class AppComponent implements OnInit, OnDestroy  {
       this.user = authData as CognitoUserInterface;
       this.ref.detectChanges();
 
+      // Use authService instead
       if (authState === AuthState.SignedIn) {
         console.log('user successfully signed in!');
         console.log('user data: ', authData);
         console.log('authState: ', authState);
       }
 
+      // Use authService instead
       if (!authData) {
         console.log('user is not signed in...');
         this.router.navigate(['']);

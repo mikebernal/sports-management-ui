@@ -7,14 +7,19 @@ import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
 import { AppComponent } from './app.component';
-
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './services/auth/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { EventManagerGuard } from './guards/event-manager.guard';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [
     AppComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,12 @@ Amplify.configure(awsconfig);
     AmplifyUIAngularModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard,
+    AdminGuard,
+    EventManagerGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

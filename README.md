@@ -28,18 +28,36 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # To do
 
-0. Add route guard.
+0. ~~Add route guard.~~
 1. ~~Reset route if authState is signedOut~~
 2. Persist user credentials using localStorage
 3. Remove Create Account components' link
 4. Set Sign In Buttons' width to 100%
 5. Create service layer for:
-   1. auth
-   2. admin
-   3. event manager
-   4. reports
-   5. games
-   6. competitors
+   1. ~~api~~
+   2. auth - use cognito expression
+   3. ~~admin~~
+      1. ~~games~~
+         1. ~~get~~
+         2. ~~post~~
+         3. ~~put~~
+         4. ~~delete~~
+      2. ~~competitors~~
+         1. ~~get~~
+         2. ~~post~~
+         3. ~~put~~
+         4. ~~delete~~
+   3. ~~event manager~~
+      1. ~~events~~
+         1. ~~get~~
+         2. ~~post~~
+         3. ~~put~~
+         4. ~~delete~~
+      2. ~~reports~~
+         1. ~~get~~
+         2. ~~post~~
+         3. ~~put~~
+         4. ~~delete~~
 6. ~~Create Games component~~
 7. ~~Create Competitors component~~
 8. ~~Create Events component~~

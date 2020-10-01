@@ -1,5 +1,5 @@
 <amplify-authenticator *ngIf="authState !== 'signedin'">
-  <!-- <amplify-sign-in slot="sign-in" hide-sign-up ></amplify-sign-in> -->
+  <amplify-sign-in slot="sign-in"></amplify-sign-in>
 </amplify-authenticator>
 
 <div *ngIf="authState === 'signedin' && user" class="App">
