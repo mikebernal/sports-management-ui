@@ -66,6 +66,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 12. ~~Use lazy loading~~
 13. ~~Add Forbidden page 403~~
 14. ~~Add Page not found 404~~
+15. ~~Added logo from https://www.olympic.org/~~
 
 ## To do
 
