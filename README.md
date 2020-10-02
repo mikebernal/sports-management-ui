@@ -26,14 +26,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-# To do
+## Completed:
 
-0. ~~Add route guard.~~
-1. ~~Reset route if authState is signedOut~~
-2. Persist user credentials using localStorage
-3. Remove Create Account components' link
-4. Set Sign In Buttons' width to 100%
-5. ~~Create service layer for:~~
+1. ~~Add route guard.~~
+2. ~~Reset route if authState is signedOut~~
+3. ~~Create service layer for:~~
    1. ~~api~~
    2. ~~auth~~
    3. ~~admin~~
@@ -58,22 +55,48 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
          2. ~~post~~
          3. ~~put~~
          4. ~~delete~~
-6. ~~Create Games component~~
-7. ~~Create Competitors component~~
-8. ~~Create Events component~~
-9. ~~Create Report component~~
-10. ~~Create Games module with routing~~
-12. ~~Create Competitors module with routing~~
-12. ~~Create Events module with routing~~
-13. ~~Create Report module with routing~~
-14. ~~Use lazy loading~~
-15. ~~Add Forbidden page 403~~
-16. ~~Add Page not found 404~~
-17. Take a refresher course about RxJS, Subscriptions, Observables
-18. Research about Webcomponents slots
-19. Research about AWS Amplify Auth class for AmplifyUIAngularModule 
+4. ~~Create Games component~~
+5. ~~Create Competitors component~~
+6. ~~Create Events component~~
+7. ~~Create Report component~~
+8. ~~Create Games module with routing~~
+9. ~~Create Competitors module with routing~~
+10. ~~Create Events module with routing~~
+11. ~~Create Report module with routing~~
+12. ~~Use lazy loading~~
+13. ~~Add Forbidden page 403~~
+14. ~~Add Page not found 404~~
+
+## To do
+
+1. Persist user credentials using localStorage
+2. Remove Create Account components' link
+3. Set Sign In Buttons' width to 100%
+4. Take a refresher course about RxJS, Subscriptions, Observables
+5. Research about Webcomponents slots
+6. Research about AWS Amplify Auth class for AmplifyUIAngularModule 
+7. Create Games child components:
+   1. AddGames component
+   2. UpdateGames component
+8. Create Competitors child components:
+   1. AddCompetitor component
+   2. UpdateCompetitor component
+9. Create Events child components:
+   1. AddEvent component
+   2. UpdateEvent component
+10. Create Reports child components:
+    1. AddReport component
+    2. UpdateReport component
 
 ## To debug
 
 1. Make role a subscription
 2. Redirect to homepage is page is refresh
+3. Remove home active link in router
+
+
+## Upcoming milestone
+
+1. ~~Oct 10, 2020 - Created client shell~~
+2. Oct 4, 2020 - Games child components created(AddGame, UpdateGame).
+3. Oct 5, 2020 - Able to view all games in Games dashboard(GamesComponent).
