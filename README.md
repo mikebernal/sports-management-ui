@@ -93,10 +93,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. Make role a subscription
 2. Redirect to homepage is page is refresh
 3. Remove home active link in router
+4. Fix forbidden component load by adding isAuthenticating
+5. ~~Fix 404 height~~
 
 
 ## Upcoming milestone
 
-1. ~~Oct 10, 2020 - Created client shell~~
+1. ~~Oct 3, 2020 - Created client shell~~
 2. Oct 4, 2020 - Games child components created(AddGame, UpdateGame).
 3. Oct 5, 2020 - Able to view all games in Games dashboard(GamesComponent).

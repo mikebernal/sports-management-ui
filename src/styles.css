@@ -6,11 +6,6 @@
   padding-top: 5rem;
 } */
 
-.starter-template {
-  padding: 8rem 1.5rem;
-  text-align: center;
-}
-
 .greeting {
   color: white;
   margin-right: 1em;
@@ -34,4 +29,9 @@ amplify-authenticator {
   --amplify-primary-color: #3b5998;
   --amplify-primary-tint: #27488f;
   --amplify-primary-shade: #112653;
+}
+
+/* Utilities */
+.unique-content {
+  padding-top: 8em;
 }

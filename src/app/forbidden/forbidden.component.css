@@ -49,6 +49,10 @@ h2{
   text-transform: uppercase;
 }
 
+#notfound {
+  text-align: center;
+}
+
 .notfound a {
   font-family: 'Titillium Web', sans-serif;
   display: inline-block;
