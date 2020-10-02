@@ -19,10 +19,10 @@ export class EventManagerGuard implements CanActivate {
 
     // Redirect and return false
     // Use cognito expression
-    if (!this.auth.isEventManager) {
-      this.router.navigate(['']);
-      return false;
-    }
+    // if (!this.auth.hasEventManagerRights) {
+    //   this.router.navigate(['']);
+    //   return false;
+    // }
 
     return true;
   }

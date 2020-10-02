@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: GamesComponent,
-    canActivate: [AuthGuard, AdminGuard]
+    // canActivate: [AdminGuard]
   }
 ];
 

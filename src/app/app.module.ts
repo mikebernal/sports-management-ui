@@ -19,7 +19,7 @@ Amplify.configure(awsconfig);
 @NgModule({
   declarations: [
     AppComponent,
-    ForbiddenComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

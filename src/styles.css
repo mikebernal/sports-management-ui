@@ -25,7 +25,13 @@ amplify-authenticator {
 }
 
 /* Mandy */
-/* [name=secondary-footer-content] _ngcontent-pot-c72 span { display: none} */
+/* [name=secondary-footer-content] span { display: none} */
 
 /* Rene */
 /* slot[name=secondary-footer-content] { display: none} */
+
+:root {
+  --amplify-primary-color: #3b5998;
+  --amplify-primary-tint: #27488f;
+  --amplify-primary-shade: #112653;
+}

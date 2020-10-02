@@ -1,6 +1,6 @@
+import { AuthService } from './services/auth/auth.service';
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,18 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit, OnDestroy  {
   user: CognitoUserInterface | undefined;
   authState: AuthState;
+  role;
 
   constructor(
     private ref: ChangeDetectorRef,
-    private router: Router,
+    private auth: AuthService
   ) { }
 
   // Check if user has admin rights
-  get hasAdminRights(): boolean {
-   return (this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') ? true : false;
+  get hasAdminRights() {
+   return (this.user.signInUserSession.accessToken.payload['cognito:groups']
+    .find(group => group === 'Admin') === 'Admin')
+      ? true : false;
   }
 
   ngOnInit() {
@@ -29,19 +32,12 @@ export class AppComponent implements OnInit, OnDestroy  {
       this.user = authData as CognitoUserInterface;
       this.ref.detectChanges();
 
-      // Use authService instead
-      if (authState === AuthState.SignedIn) {
-        console.log('user successfully signed in!');
-        console.log('user data: ', authData);
-        console.log('authState: ', authState);
-      }
-
-      // Use authService instead
-      if (!authData) {
-        console.log('user is not signed in...');
-        this.router.navigate(['']);
-      }
+      // Check if user is signedIn
+      this.auth.isLoggedIn(authState, authData);
+      this.auth.isLoggedOut(authData);
+      this.auth.setRole(this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin');
     });
+  
   }
 
   ngOnDestroy() {

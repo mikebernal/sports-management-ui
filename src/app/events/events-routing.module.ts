@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: EventsComponent,
-    canActivate: [AuthGuard, EventManagerGuard]
+    // canActivate: [AuthGuard, EventManagerGuard]
   }
 ];
 
