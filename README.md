@@ -33,9 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Persist user credentials using localStorage
 3. Remove Create Account components' link
 4. Set Sign In Buttons' width to 100%
-5. Create service layer for:
+5. ~~Create service layer for:~~
    1. ~~api~~
-   2. auth - use cognito expression
+   2. ~~auth~~
    3. ~~admin~~
       1. ~~games~~
          1. ~~get~~
@@ -67,3 +67,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 12. ~~Create Events module with routing~~
 13. ~~Create Report module with routing~~
 14. ~~Use lazy loading~~
+15. ~~Add Forbidden page 403~~
+16. ~~Add Page not found 404~~
+17. Take a refresher course about RxJS, Subscriptions, Observables
+18. Research about Webcomponents slots
+19. Research about AWS Amplify Auth class for AmplifyUIAngularModule 
+
+## To debug
+
+1. Make role a subscription
+2. Redirect to homepage is page is refresh

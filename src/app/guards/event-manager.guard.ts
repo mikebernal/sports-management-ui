@@ -17,14 +17,12 @@ export class EventManagerGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    // Redirect and return false
-    // Use cognito expression
-    // if (!this.auth.hasEventManagerRights) {
-    //   this.router.navigate(['']);
-    //   return false;
-    // }
+      if (this.auth.getRole() !== 'EventManager') {
+        this.router.navigate(['forbidden']);
+        return false;
+      }
 
-    return true;
+      return true;
   }
 
 }

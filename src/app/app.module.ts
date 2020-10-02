@@ -13,13 +13,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { EventManagerGuard } from './guards/event-manager.guard';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

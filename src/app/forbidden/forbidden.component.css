@@ -2,10 +2,12 @@
   margin:0;
   padding: 0;
 }
+
 body{
   background: #233142;
   
 }
+
 .whistle{
   width: 20%;
   fill: #f95959;
@@ -28,6 +30,7 @@ body{
     transform: rotate(3deg);
   }
 }
+
 h1{
   margin-top: -100px;
   margin-bottom: 20px;
@@ -37,10 +40,42 @@ h1{
   font-size: 90px;
   font-weight: 800;
 }
+
 h2{
   color: #455d7a;
   text-align: center;
   font-family: 'Raleway';
   font-size: 30px;
   text-transform: uppercase;
+}
+
+.notfound a {
+  font-family: 'Titillium Web', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  background: #5c91fe;
+  padding: 10px 40px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 1px;
+  margin-top: 15px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound a:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 {
+    height: 110px;
+    line-height: 110px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 120px;
+  }
 }
