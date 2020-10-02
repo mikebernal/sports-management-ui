@@ -33,11 +33,15 @@ export class AppComponent implements OnInit, OnDestroy  {
       this.ref.detectChanges();
 
       // Check if user is signedIn
-      this.auth.isLoggedIn(authState, authData);
+      // this.auth.isLoggedIn(authState, authData);
+      if (this.auth.isLoggedIn(authState, authData)) {
+        this.auth.setRole(this.user.signInUserSession.accessToken.payload['cognito:groups']
+        .find(group => group === 'Admin') === 'Admin');
+      }
+
       this.auth.isLoggedOut(authData);
-      this.auth.setRole(this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin');
     });
-  
+
   }
 
   ngOnDestroy() {

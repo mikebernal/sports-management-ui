@@ -22,14 +22,17 @@ export class AuthService {
       console.log('authState: ', as);
       return true;
     }
+    return false;
   }
 
   isLoggedOut(ad) {
     if (!ad) {
-      console.log('user is not signed in...it works');
+      console.log('user is not signed in or signed out');
       this.router.navigate(['']);
       return true;
     }
+
+    return false;
   }
 
   setRole(val: boolean) {
@@ -40,12 +43,10 @@ export class AuthService {
     }
 
     console.log('role has been set to : ' + this.getRole());
-
     return this.role;
   }
 
   getRole() {
-    console.log('auth service role: ' + this.role);
     return this.role;
   }
 
