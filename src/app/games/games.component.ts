@@ -1,3 +1,5 @@
+import { GamesConfig } from './../classes/games-config';
+import { GamesService } from './../services/admin/games.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
+  game: any;
+  games: GamesConfig[];
 
-  constructor() { }
+  constructor(
+    private gameService: GamesService
+  ) {
+    console.log('GamesComponent Constructor');
+   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('GamesComponent OnInit');
+    this.getGames();
+  }
+
+  getGames() {
+    this.gameService.getGames().subscribe(
+      (games) => {
+        this.games = games;
+        console.log('getGames() ->' + games);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 }

@@ -1,6 +1,7 @@
 import { AuthService } from './services/auth/auth.service';
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
+import { NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -16,17 +17,18 @@ export class AppComponent implements OnInit, OnDestroy  {
 
   constructor(
     private ref: ChangeDetectorRef,
-    private auth: AuthService
+    private auth: AuthService,
+    private ngZone: NgZone
   ) { }
 
   // Check if user has admin rights
   get hasAdminRights() {
-   return (this.user.signInUserSession.accessToken.payload['cognito:groups']
-    .find(group => group === 'Admin') === 'Admin')
-      ? true : false;
+   return (this.ngZone.run(() => this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') ? true : false);
   }
 
   ngOnInit() {
+
+    console.log('should run in spa routing');
 
     onAuthUIStateChange((authState, authData) => {
       this.authState = authState;
@@ -34,12 +36,12 @@ export class AppComponent implements OnInit, OnDestroy  {
       this.ref.detectChanges();
 
       // Check if user is signedIn
-      if (this.auth.isLoggedIn(authState, authData)) {
+      if (this.ngZone.run(() => this.auth.isLoggedIn(authState, authData))) {
         this.auth.setRole(this.user.signInUserSession.accessToken.payload['cognito:groups']
         .find(group => group === 'Admin') === 'Admin');
       }
 
-      this.auth.isLoggedOut(authData);
+      this.ngZone.run(() => this.auth.isLoggedOut(authData));
     });
 
   }

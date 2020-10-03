@@ -68,13 +68,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 14. ~~Add Page not found 404~~
 15. ~~Added logo from https://www.olympic.org/~~
 
-## NOTE
-
-1. Temporarily disable auth guard
-2. Cognito token might be the cause of routing error. Might use subscription/ observables in service
-
 ## To do
 
+0. Change role to BehaviorSubject fomr rxjs
 1. Persist user credentials using localStorage
 2. Remove Create Account components' link
 3. Set Sign In Buttons' width to 100%
@@ -101,18 +97,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To debug
 
 1. Make role a subscription
-2. Redirect to homepage is page is refresh
-3. Remove home active link in router
-4. Fix forbidden component load by adding isAuthenticating
-5. ~~Fix 404 height~~
-6. Use angular routing in child components
-7. Fix authGuard direct routing access
-8. Do I need a resolver for child routing? 
-9. Child components not loading properly when using routerLink, is it because of lazy loading?
+2. Remove home active link in router
+3. Fix forbidden component load by adding isAuthenticating
+4. Create AddGame Form
 
 
 ## Upcoming milestone
 
 1. ~~Oct 3, 2020 - Created client shell~~
-2. Oct 4, 2020 - Games child components created(AddGame, UpdateGame).
-3. Oct 5, 2020 - Able to view all games in Games dashboard(GamesComponent).
+2. Oct 6, 2020 - AddGame Form
+
+
+## Lesson learned
+
+1. Wrap function call in ngZone when calling function outside of Angular
+2. Fix warnings present in console.log.
+3. If you are hacking instead of using the default framework way, then you must be doing something wrong.

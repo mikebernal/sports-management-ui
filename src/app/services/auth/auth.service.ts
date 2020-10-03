@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
+import { CognitoUserInterface, AuthState } from '@aws-amplify/ui-components';
 
 @Injectable({
   providedIn: 'root'
