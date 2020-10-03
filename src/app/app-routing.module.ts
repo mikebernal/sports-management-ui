@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'forbidden', component: ForbiddenComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
-
 @NgModule({
   declarations: [],
   imports: [

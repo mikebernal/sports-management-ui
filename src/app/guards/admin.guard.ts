@@ -21,9 +21,10 @@ export class AdminGuard implements CanActivate, CanActivateChild {
     if (this.auth.getRole() !== 'Admin') {
       this.router.navigate(['forbidden']);
       return false;
+    } else {
+      return true;
     }
 
-    return true;
   }
 
   canActivateChild(
@@ -33,9 +34,10 @@ export class AdminGuard implements CanActivate, CanActivateChild {
     if (this.auth.getRole() !== 'Admin') {
       this.router.navigate(['forbidden']);
       return false;
+    } else {
+      return true;
     }
 
-    return true;
   }
 
 }

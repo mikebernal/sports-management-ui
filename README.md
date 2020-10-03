@@ -100,6 +100,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. Remove home active link in router
 4. Fix forbidden component load by adding isAuthenticating
 5. ~~Fix 404 height~~
+6. Use angular routing in child components
+7. Fix authGuard direct routing access
 
 
 ## Upcoming milestone

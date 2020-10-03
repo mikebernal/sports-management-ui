@@ -20,9 +20,23 @@ export class EventManagerGuard implements CanActivate {
       if (this.auth.getRole() !== 'EventManager') {
         this.router.navigate(['forbidden']);
         return false;
+      } else {
+        return true;
       }
 
+  }
+
+  canActivateChild(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
+    if (this.auth.getRole() !== 'EventManager') {
+      this.router.navigate(['forbidden']);
+      return false;
+    } else {
       return true;
+    }
+
   }
 
 }
