@@ -77,17 +77,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 5. Research about Webcomponents slots
 6. Research about AWS Amplify Auth class for AmplifyUIAngularModule 
 7. Create Games child components:
-   1. AddGames component
-   2. UpdateGames component
+   1. AddGame component
+   2. UpdateGame component
+   3. GameDetails component
 8. Create Competitors child components:
    1. AddCompetitor component
    2. UpdateCompetitor component
+   3. CompetitorDetails component
 9. Create Events child components:
    1. AddEvent component
    2. UpdateEvent component
+   3. EvenDetails component
 10. Create Reports child components:
     1. AddReport component
     2. UpdateReport component
+    3. ReportDetails component
 
 ## To debug
 

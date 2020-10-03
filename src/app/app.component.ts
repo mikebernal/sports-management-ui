@@ -9,6 +9,7 @@ import { onAuthUIStateChange, CognitoUserInterface, AuthState } from '@aws-ampli
 })
 
 export class AppComponent implements OnInit, OnDestroy  {
+  title: 'Sports Management System';
   user: CognitoUserInterface | undefined;
   authState: AuthState;
   role;
