@@ -1,25 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouterModule, Routes, PreloadAllModules  } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'games', loadChildren: () => import(`./games/games.module`).then(m => m.GamesModule) },
-  { path: 'events', loadChildren: () => import(`./events/events.module`).then(m => m.EventsModule) },
-  { path: 'competitors', loadChildren: () => import(`./competitors/competitors.module`).then(m => m.CompetitorsModule) },
-  { path: 'reports', loadChildren: () => import(`./reports/reports.module`).then(m => m.ReportsModule) },
   { path: 'forbidden', component: ForbiddenComponent },
-  { path: '**', component: PageNotFoundComponent}
+  { path: 'games', loadChildren: () => import(`./games/games.module`).then(m => m.GamesModule) },
+  { path: 'competitors', loadChildren: () => import(`./competitors/competitors.module`).then(m => m.CompetitorsModule) },
+  { path: 'events', loadChildren: () => import(`./events/events.module`).then(m => m.EventsModule) },
+  { path: 'reports', loadChildren: () => import(`./reports/reports.module`).then(m => m.ReportsModule) },
+  { path: '**', component: PageNotFoundComponent }
 ];
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(
+      routes,
+        {
+          preloadingStrategy: PreloadAllModules
+        }
+    )
   ],
   exports: [RouterModule]
 })

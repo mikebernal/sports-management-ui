@@ -18,7 +18,7 @@ import { CompetitorDetailsComponent } from './competitor-details/competitor-deta
   ],
   imports: [
     CommonModule,
-    CompetitorsRoutingModule,
+    CompetitorsRoutingModule
   ]
 })
 export class CompetitorsModule { }

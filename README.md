@@ -68,6 +68,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 14. ~~Add Page not found 404~~
 15. ~~Added logo from https://www.olympic.org/~~
 
+## NOTE
+
+1. Temporarily disable auth guard
+2. Cognito token might be the cause of routing error. Might use subscription/ observables in service
+
 ## To do
 
 1. Persist user credentials using localStorage
@@ -102,6 +107,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 5. ~~Fix 404 height~~
 6. Use angular routing in child components
 7. Fix authGuard direct routing access
+8. Do I need a resolver for child routing? 
+9. Child components not loading properly when using routerLink, is it because of lazy loading?
 
 
 ## Upcoming milestone
