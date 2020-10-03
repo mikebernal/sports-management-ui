@@ -13,12 +13,9 @@ export class GamesComponent implements OnInit {
 
   constructor(
     private gameService: GamesService
-  ) {
-    console.log('GamesComponent Constructor');
-   }
+  ) { }
 
   ngOnInit() {
-    console.log('GamesComponent OnInit');
     this.getGames();
   }
 
@@ -26,7 +23,6 @@ export class GamesComponent implements OnInit {
     this.gameService.getGames().subscribe(
       (games) => {
         this.games = games;
-        console.log('getGames() ->' + games);
       },
       (error) => {
         console.log(error);

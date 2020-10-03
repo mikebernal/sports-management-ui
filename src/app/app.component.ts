@@ -23,12 +23,13 @@ export class AppComponent implements OnInit, OnDestroy  {
 
   // Check if user has admin rights
   get hasAdminRights() {
-   return (this.ngZone.run(() => this.user.signInUserSession.accessToken.payload['cognito:groups'].find(group => group === 'Admin') === 'Admin') ? true : false);
+   return (this.ngZone.run(
+     () => this.user.signInUserSession.accessToken.payload['cognito:groups']
+      .find(group => group === 'Admin') === 'Admin')
+        ? true : false);
   }
 
   ngOnInit() {
-
-    console.log('should run in spa routing');
 
     onAuthUIStateChange((authState, authData) => {
       this.authState = authState;
