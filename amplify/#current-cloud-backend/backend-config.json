@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "sportsmanagementui03d1ce38": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

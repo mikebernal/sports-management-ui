@@ -1,0 +1,38 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sportsmanagementui-dev-203614-authRole",
+      "UnauthRoleArn": "arn:aws:iam::680452795123:role/amplify-sportsmanagementui-dev-203614-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::680452795123:role/amplify-sportsmanagementui-dev-203614-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-sportsmanagementui-dev-203614-deployment",
+      "UnauthRoleName": "amplify-sportsmanagementui-dev-203614-unauthRole",
+      "StackName": "amplify-sportsmanagementui-dev-203614",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:680452795123:stack/amplify-sportsmanagementui-dev-203614/5e0ef590-0250-11eb-a785-06e53a7ee108",
+      "AmplifyAppId": "d31tuoie8n79yx"
+    }
+  },
+  "auth": {
+    "sportsmanagementui03d1ce38": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-sportsmanagementui-dev-203614-deployment/amplify-cfn-templates/auth/sportsmanagementui03d1ce38-cloudformation-template.yml",
+        "logicalId": "authsportsmanagementui03d1ce38"
+      },
+      "lastPushTimeStamp": "2020-09-29T12:54:59.676Z",
+      "output": {
+        "AppClientSecret": "150nlncakd15riaah1jfnbtm01u23lh8d3vu8t423s0ae81aemad",
+        "UserPoolId": "ap-southeast-2_tXUZCzWi3",
+        "AppClientIDWeb": "1ir8co4h4auveempnoub746ijg",
+        "AppClientID": "6c5eseghmi2cgtsda1381c4n0o",
+        "IdentityPoolId": "ap-southeast-2:be65d3d9-5d77-4c5a-9d69-5e8f8444b5ca",
+        "IdentityPoolName": "sportsmanagementui03d1ce38_identitypool_03d1ce38__dev",
+        "UserPoolName": "sportsmanagementui03d1ce38_userpool_03d1ce38"
+      },
+      "lastPushDirHash": "d6r57xr38bn4mGeasJ9VKFPZtz8="
+    }
+  }
+}
