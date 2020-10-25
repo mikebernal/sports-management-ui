@@ -25,7 +25,7 @@ Amplify.configure(awsconfig);
     BrowserModule,
     HttpClientModule,
     AmplifyUIAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     ApiService,

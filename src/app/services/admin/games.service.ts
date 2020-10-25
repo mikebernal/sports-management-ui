@@ -1,7 +1,8 @@
 import { ApiService } from './../api.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { GamesConfig } from 'src/app/classes/games-config';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +29,26 @@ export class GamesService {
     return this.api.put<GamesConfig>('games/', obj);
   }
 
-  deleteGame(id): Observable<{}> {
-    return this.api.delete('games/', id);
+  deleteGame(id: number): Observable<{}> {
+    return this.api.delete('games/', id).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }
+
+  handleError(error) {
+
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+
+    window.alert(errorMessage);
+    return throwError(errorMessage);
   }
 
 }

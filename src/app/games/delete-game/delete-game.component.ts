@@ -1,22 +1,22 @@
-import { GamesConfig } from 'src/app/classes/games-config';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GamesConfig } from 'src/app/classes/games-config';
 import { GamesService } from 'src/app/services/admin/games.service';
 
 @Component({
-  selector: 'app-update-game',
-  templateUrl: './update-game.component.html',
-  styleUrls: ['./update-game.component.css']
+  selector: 'app-delete-game',
+  templateUrl: './delete-game.component.html',
+  styleUrls: ['./delete-game.component.css']
 })
-export class UpdateGameComponent implements OnInit, OnDestroy {
+export class DeleteGameComponent implements OnInit, OnDestroy {
   id: string;
   game: GamesConfig;
   private sub: any;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private gameService: GamesService
-
   ) { }
 
   ngOnInit() {
@@ -25,7 +25,6 @@ export class UpdateGameComponent implements OnInit, OnDestroy {
       this.id = params.id;
 
       this.getGame();
-
    });
   }
 
@@ -39,6 +38,22 @@ export class UpdateGameComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
+  }
+
+  deleteGame(id) {
+    this.gameService
+      .deleteGame(id)
+      .subscribe(
+        (response) => {
+          // this.router.navigate(['/games']);
+          this.router.navigateByUrl('/GamesComponent', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/games']);
+        });
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   ngOnDestroy() {

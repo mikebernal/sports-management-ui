@@ -29,7 +29,7 @@ export class ApiService {
   }
 
   delete(uri: string, id: number): Observable<{}> {
-    return this.http.delete<{}>(`${this.apiUrl}${uri}/${id}`);
+    return this.http.delete<{}>(`${this.apiUrl}${uri}${id}`);
   }
 
 }
