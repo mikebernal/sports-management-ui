@@ -1,5 +1,5 @@
 export interface GamesConfig {
-  id?: string;
+  id?: any;
   code: string;
   name: string;
   duration: string;

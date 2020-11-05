@@ -8,11 +8,13 @@ import { AddGameComponent } from './add-game/add-game.component';
 import { DeleteGameComponent } from './delete-game/delete-game.component';
 
 import { AdminGuard } from '../guards/admin.guard';
+import { GamesResolverService } from '../services/admin/games-resolver.service';
 
 const routes: Routes = [
   {
     path: '',
     component: GamesComponent,
+    resolve: { games: GamesResolverService },
     canActivate: [AdminGuard],
     canActivateChild: [AdminGuard],
     children: [
