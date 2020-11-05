@@ -5,12 +5,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## DFD Level 0
 
-![System Overview](src\assets\img\dfd0.png)
+![System Overview](https://github.com/mikebernal/sports-management-ui/blob/master/src/assets/img/dfd0.png)
 
 
 ## Identity and Access Management
 
-![AWS Cognito](src\assets\img\iam.png)
+![AWS Cognito](https://github.com/mikebernal/sports-management-ui/blob/master/src/assets/img/iam.png)
 
 ## Development server
 
