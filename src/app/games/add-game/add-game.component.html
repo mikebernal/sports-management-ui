@@ -9,7 +9,7 @@
         </button>
       </div>
         <div class="modal-body">
-          <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm.value.name)">
+          <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
 
             {{ addForm.value | json }}
             <div class="form-group">
@@ -35,17 +35,16 @@
             <div class="form-group">
               <label for="rules" class="control-label">Rules</label>
               <input type="text" class="form-control" id="rules" name="rules" ngModel placeholder="rulebook.pdf">
-            </div>		    
+            </div>		 
 
-           <button type="submit" class="btn btn-primary"  data-dismiss="modal">Add</button>
-
+            <div class="modal-footer">
+              <button id="closeModalButton" [hidden]="false" data-toggle="modal" data-target="#addForm" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button id="openModalButton" [hidden]="false" data-toggle="modal" data-target="#addForm" class="btn btn-primary">Add Game</button>
+            </div>
             
           </form>	      
         </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary"  data-dismiss="modal">Add</button>
-      </div>
+
     </div>
   </div>
 </div>

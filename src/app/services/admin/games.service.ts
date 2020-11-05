@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { GamesConfig } from 'src/app/classes/games-config';
 import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,29 @@ import { catchError, retry } from 'rxjs/operators';
 export class GamesService {
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    private http: HttpClient
   ) { }
 
   getGame(id: string): Observable<GamesConfig> {
-    return this.api.get<GamesConfig>('games/' + id);
+    return this.api.get<GamesConfig>('games/' + id)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   getGames(): Observable<GamesConfig[]> {
-    return this.api.get<GamesConfig[]>('games/');
+    return this.api.get<GamesConfig[]>('games/')
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
-  addGame(obj): Observable<GamesConfig> {
-    return this.api.post<GamesConfig>('games/', obj);
+  addGame(game): Observable<GamesConfig> {
+    return this.api.post<GamesConfig>('games/', game)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   updateGame(obj): Observable<GamesConfig> {
