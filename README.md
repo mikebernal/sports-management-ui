@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
+
+## DFD Level 0
+
+![System Overview](src\assets\img\dfd0.png)
+
+
+## Identity and Access Management
+
+![AWS Cognito](src\assets\img\iam.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
