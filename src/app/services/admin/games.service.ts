@@ -1,3 +1,4 @@
+import { UpdateGameConfig } from './../../classes/games-config';
 import { ApiService } from './../api.service';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -36,8 +37,12 @@ export class GamesService {
     );
   }
 
-  updateGame(obj): Observable<GamesConfig> {
-    return this.api.put<GamesConfig>('games/', obj);
+  updateGame(id: string, game): Observable<UpdateGameConfig> {
+    console.log(game);
+    return this.api.put<UpdateGameConfig>('games/' + id, game)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   deleteGame(id: number): Observable<{}> {

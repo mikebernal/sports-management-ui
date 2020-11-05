@@ -20,12 +20,12 @@ export class ApiService {
     return this.http.get<T>(`${this.apiUrl}${uri}`);
   }
 
-  post<T>(uri: string, obj): Observable<T> {
-    return this.http.post<T>(`${this.apiUrl}${uri}`, obj);
+  post<T>(uri: string, game) {
+    return this.http.post<T>(`${this.apiUrl}${uri}`, game);
   }
 
-  put<T>(uri: string, obj): Observable<T> {
-    return this.http.put<T>(`${this.apiUrl}${uri}`, obj);
+  put<T>(uri: string, game): Observable<T> {
+    return this.http.put<T>(`${this.apiUrl}${uri}`, game);
   }
 
   delete(uri: string, id: number): Observable<{}> {

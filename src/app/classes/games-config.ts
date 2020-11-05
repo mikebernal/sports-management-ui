@@ -6,3 +6,12 @@ export interface GamesConfig {
   description: string;
   rules: string;
 }
+
+export interface UpdateGameConfig {
+  id: string;
+  code: string;
+  name: string;
+  duration: string;
+  description: string;
+  rules: string;
+}

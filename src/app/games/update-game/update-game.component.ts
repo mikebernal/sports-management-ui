@@ -41,6 +41,20 @@ export class UpdateGameComponent implements OnInit, OnDestroy {
     );
   }
 
+  onSubmit(game) {
+    document.getElementById('closeModalButton').click();
+    game.form.value.id = parseInt(this.id);
+    // console.log(game.form.value);
+    this.gameService.updateGame(this.id, game.form.value).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
