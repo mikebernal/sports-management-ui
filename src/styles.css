@@ -36,7 +36,3 @@ amplify-authenticator {
 .unique-content {
   padding-top: 8em;
 }
-
-table, table th, table td {
-  border: 1px solid black;
-}

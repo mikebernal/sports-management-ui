@@ -13,40 +13,46 @@
   </a>
   <br><br>
 
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>CODE</th>
-      <th>NAME</th>
-      <th>DURATION</th>
-      <th>DESCRIPTION</th>
-      <th>RULES</th>
-      <th>EDIT</th>
-      <th>DELETE</th>
-    </tr>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">CODE</th>
+          <th scope="col">NAME</th>
+          <th scope="col">DURATION</th>
+          <th scope="col">DESCRIPTION</th>
+          <th scope="col">RULES</th>
+          <th scope="col">EDIT</th>
+          <th scope="col">DELETE</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr *ngFor="let game of games">  
+        <th scope="row">{{game.id}}</th>  
+        <td>{{game.code}}</td>  
+        <td>{{game.name}}</td>  
+        <td>{{game.duration | slice:0:10 }}</td>  
+        <td>{{game.description | slice:0:10 }}</td>  
+        <td>{{game.rules | slice:0:10 }}</td>  
+  
+        <!-- Edit button -->
+        <td>
+          <a class="nav-link" [routerLink]="['update/', game.id]" routerLinkActive="router-link-active" >
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditGame">Edit</button>
+          </a>
+        </td>  
+  
+        <!-- Delete button -->
+        <td>
+          <a class="nav-link" [routerLink]="['delete/', game.id]" routerLinkActive="router-link-active" >
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteGame">Delete</button>
+          </a>
+        </td>  
+      </tr> 
+    </tbody>
     
-    <tr *ngFor="let game of games">  
-      <td>{{game.id}}</td>  
-      <td>{{game.code}}</td>  
-      <td>{{game.name}}</td>  
-      <td>{{game.duration}}</td>  
-      <td>{{game.description}}</td>  
-      <td>{{game.rules}}</td>  
 
-      <!-- Edit button -->
-      <td>
-        <a class="nav-link" [routerLink]="['update/', game.id]" routerLinkActive="router-link-active" >
-          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#EditGame">Edit</button>
-        </a>
-      </td>  
-
-      <!-- Delete button -->
-      <td>
-        <a class="nav-link" [routerLink]="['delete/', game.id]" routerLinkActive="router-link-active" >
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteGame">Delete</button>
-        </a>
-      </td>  
-    </tr> 
   </table>
 </div>
 <br>
