@@ -14,34 +14,96 @@
             {{ addForm.value | json }}
             <div class="form-group">
               <label for="code" class="control-label">Code</label>
-              <input type="text" class="form-control" id="code" name="code" ngModel placeholder="sports code e.g. SWI2020CH">
+              <input type="text" class="form-control" id="code" name="code" [(ngModel)]="game.code" #code="ngModel" placeholder="sports code e.g. SWI2020CH" required minlength="3">
+
+              <!-- Code error notification -->
+              <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+
+                <div *ngIf="code.errors.required">
+                  Code is required.
+                </div>
+                <div *ngIf="code.errors.minlength">
+                  Code must be at least 4 characters long.
+                </div>
+          
+              </div>
+
             </div>	
           
             <div class="form-group">
               <label for="name" class="control-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" ngModel placeholder="name of the sport">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="game.name" #name="ngModel" placeholder="name of the sport" required minlength="4">
+
+              <!-- Name error notification -->
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+                <div *ngIf="name.errors.required">
+                  Name is required.
+                </div>
+                <div *ngIf="name.errors.minlength">
+                  Name must be at least 4 characters long.
+                </div>
+          
+              </div>
+
             </div>					
                         
             <div class="form-group">
               <label for="duration" class="control-label">Duration</label>
-              <input type="text" class="form-control" id="duration" name="duration" ngModel placeholder="how many hours this game will last">
+              <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="game.duration" #duration="ngModel" minlength="2"  placeholder="how many hours this game will last" required>
+
+              <!-- Duration error notification -->
+              <div *ngIf="duration.invalid && (duration.dirty || duration.touched)" class="alert alert-danger">
+
+                <div *ngIf="duration.errors.required">
+                  Duration is required.
+                </div>
+                <div *ngIf="duration.errors.minlength">
+                  Duration must be at least 2 characters long.
+                </div>
+          
+              </div>
+
             </div>	
           
             <div class="form-group">
               <label for="description" class="control-label">Description</label>
-              <textarea type="text" class="form-control z-depth-1" id="description" rows="3" name="description" ngModel placeholder="Tell us about the game"></textarea>
+              <textarea type="text" class="form-control z-depth-1" id="description" rows="3" name="description" [(ngModel)]="game.description" #description="ngModel" minlength="4" placeholder="Tell us about the game" required></textarea>
               <!-- <textarea class="form-control z-depth-1" id="description" rows="3" name="description" [(ngModel)]="game.description"></textarea> -->
 
+              <!-- Description error notification -->
+                <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+
+                  <div *ngIf="description.errors.required">
+                    Description is required.
+                  </div>
+                  <div *ngIf="description.errors.minlength">
+                    Description must be at least 2 characters long.
+                  </div>
+            
+                </div>
             </div>									
             
             <div class="form-group">
               <label for="rules" class="control-label">Rules</label>
-              <input type="text" class="form-control" id="rules" name="rules" ngModel placeholder="rulebook.pdf">
+              <input type="text" class="form-control" id="rules" name="rules" [(ngModel)]="game.rules" #rules="ngModel" minlength="4" placeholder="rulebook.pdf" required>
+
+              <!-- Rules error notification -->
+              <div *ngIf="rules.invalid && (rules.dirty || rules.touched)" class="alert alert-danger">
+
+                <div *ngIf="rules.errors.required">
+                  Rules is required.
+                </div>
+                <div *ngIf="rules.errors.minlength">
+                  Rules must be at least 2 characters long.
+                </div>
+          
+              </div>
             </div>		 
 
             <div class="modal-footer">
               <button id="closeModalButton" [hidden]="false" data-toggle="modal" data-target="#addForm" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button id="openModalButton" [hidden]="false" data-toggle="modal" data-target="#addForm" class="btn btn-primary">Add Game</button>
+              <button id="openModalButton" [hidden]="false" data-toggle="modal" data-target="#addForm" class="btn btn-primary" [disabled]="!addForm.valid">Add Game</button>
             </div>
             
           </form>	      

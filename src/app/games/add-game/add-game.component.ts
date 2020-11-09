@@ -15,6 +15,13 @@ export class AddGameComponent implements OnInit {
   id: string;
   private sub: any;
   addForm: any;
+  game = {
+    code: '',
+    name: '',
+    duration: '',
+    description: '',
+    rules: ''
+  };
 
   constructor(
     private route: ActivatedRoute,
