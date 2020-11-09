@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { GamesConfig } from 'src/app/classes/games-config';
+import { ActivatedRoute } from '@angular/router';
 import { GamesService } from 'src/app/services/admin/games.service';
 
 import { CommonModule } from '@angular/common';
@@ -25,7 +24,6 @@ export class AddGameComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private gameService: GamesService
   ) { }
 

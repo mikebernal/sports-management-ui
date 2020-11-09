@@ -15,29 +15,93 @@
           
           <div class="form-group">
             <label for="code" class="control-label">Code</label>
-            <input type="text" class="form-control" id="code" name="code" [(ngModel)]="game.code">
+            <input type="text" class="form-control" id="code" name="code" [(ngModel)]="game.code" #code="ngModel" minlength="2" required>
+
+            <!-- Code error notification -->
+            <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+
+              <div *ngIf="code.errors.required">
+                Code is required.
+              </div>
+              <div *ngIf="code.errors.minlength">
+                Code must be at least 2 characters long.
+              </div>
+        
+            </div>
+
           </div>	
         
           <div class="form-group">
             <label for="name" class="control-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="game.name" >
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="game.name" #name="ngModel" minlength="4" required>
+
+            <!-- Name error notification -->
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+              <div *ngIf="name.errors.required">
+                Name is required.
+              </div>
+              <div *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+        
+            </div>
+
           </div>					
                       
           <div class="form-group">
             <label for="duration" class="control-label">Duration</label>
-            <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="game.duration">
+            <input type="text" class="form-control" id="duration" name="duration" [(ngModel)]="game.duration" #duration="ngModel" minlength="2" required>
+
+            <!-- Duration error notification -->
+            <div *ngIf="duration.invalid && (duration.dirty || duration.touched)" class="alert alert-danger">
+
+              <div *ngIf="duration.errors.required">
+                Duration is required.
+              </div>
+              <div *ngIf="duration.errors.minlength">
+                Duration must be at least 2 characters long.
+              </div>
+        
+            </div>
+
           </div>	
         
           <div class="form-group shadow-textarea">
             <label for="description" class="control-label">Description</label>
             <!-- <input type="text" class="form-control" id="description" name="description" [(ngModel)]="game.description"> -->
 
-            <textarea class="form-control z-depth-1" id="description" rows="3" name="description" [(ngModel)]="game.description"></textarea>
+            <textarea class="form-control z-depth-1" id="description" rows="3" name="description" [(ngModel)]="game.description" #description="ngModel" minlength="4" required></textarea>
+
+            <!-- Description error notification -->
+            <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+
+              <div *ngIf="description.errors.required">
+                Description is required.
+              </div>
+              <div *ngIf="description.errors.minlength">
+                Description must be at least 2 characters long.
+              </div>
+        
+            </div>
           </div>									
           
           <div class="form-group">
             <label for="rules" class="control-label">Rules</label>
-            <input type="text" class="form-control" id="rules" name="rules" [(ngModel)]="game.rules" >
+            <input type="text" class="form-control" id="rules" name="rules" [(ngModel)]="game.rules" #rules="ngModel" minlength="4" required>
+
+             <!-- Rules error notification -->
+             <div *ngIf="rules.invalid && (rules.dirty || rules.touched)" class="alert alert-danger">
+
+              <div *ngIf="rules.errors.required">
+                Rules is required.
+              </div>
+              <div *ngIf="rules.errors.minlength">
+                Rules must be at least 2 characters long.
+              </div>
+        
+            </div>
+
           </div>		 
 
           <div class="modal-footer">

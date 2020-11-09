@@ -1,4 +1,3 @@
-import { GamesConfig } from 'src/app/classes/games-config';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from 'src/app/services/admin/games.service';
@@ -10,8 +9,15 @@ import { GamesService } from 'src/app/services/admin/games.service';
 })
 export class UpdateGameComponent implements OnInit, OnDestroy {
   id: string;
-  game: GamesConfig;
   private sub: any;
+  editForm: any;
+  game = {
+    code: '',
+    name: '',
+    duration: '',
+    description: '',
+    rules: ''
+  };
 
   constructor(
     private route: ActivatedRoute,
