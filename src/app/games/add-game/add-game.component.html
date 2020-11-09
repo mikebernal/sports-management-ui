@@ -11,7 +11,7 @@
         <div class="modal-body">
           <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
 
-            {{ addForm.value | json }}
+            <!-- {{ addForm.value | json }} -->
             <div class="form-group">
               <label for="code" class="control-label">Code</label>
               <input type="text" class="form-control" id="code" name="code" [(ngModel)]="game.code" #code="ngModel" placeholder="sports code e.g. SWI2020CH" required minlength="3">
