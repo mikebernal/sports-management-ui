@@ -1,13 +1,6 @@
 <div class="unique-content">
   <h1>Competitors</h1>
   <br>
-  
-  <nav>
-    <ul>
-      <li><a class="nav-link" [routerLink]="['add']" routerLinkActive="router-link-active" >Add Competitor</a></li>
-      <li><a class="nav-link" [routerLink]="['update']" routerLinkActive="router-link-active" >Update Competitor</a></li>
-    </ul>
-  </nav>
 
   <p class="lead">
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
@@ -20,10 +13,58 @@
   </div>
   <br>
   
-  <ul>
-    <li>Competitor 1</li>
-    <li>Competitor 2</li>
-  </ul>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">SALUTATION</th>
+        <th scope="col">NAME</th>
+        <th scope="col">DOB</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">COUNTRY</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">CONTACT</th>
+        <th scope="col">WEBSITE</th>
+        <th scope="col">PHOTO</th>
+        <th class="text-center" scope="col">EDIT</th>
+        <th class="text-center" scope="col">DELETE</th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <tr *ngFor="let competitor of competitors">  
+      <th scope="row">{{competitor.id}}</th>  
+      <td>{{competitor.salutation}}</td>  
+      <td>{{competitor.name}}</td>  
+      <td>{{competitor.dob }}</td>  
+      <td>{{competitor.email }}</td>  
+      <td>{{competitor.description | slice:0:10 }}</td>  
+      <td>{{competitor.country }}</td>  
+      <td>{{competitor.gender }}</td>  
+      <td>{{competitor.contact }}</td>  
+      <td>{{competitor.website }}</td>  
+      <td>{{competitor.photo }}</td>  
+
+      <!-- Edit button -->
+      <td class="text-center">
+        <a class="nav-link" [routerLink]="['update/', competitor.id]" routerLinkActive="router-link-active" >
+          <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#EditCompetitor">Edit</button>
+        </a>
+      </td>  
+
+      <!-- Delete button -->
+      <td>
+        <a class="nav-link" [routerLink]="['delete/', competitor.id]" routerLinkActive="router-link-active" >
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteCompetitor">Delete</button>
+        </a>
+      </td>  
+    </tr> 
+  </tbody>
+  
+
+</table>
+<br>
 
   <router-outlet></router-outlet>
 

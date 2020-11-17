@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   env: 'development',
-  apiUrl: 'http://127.0.0.1:5000/api/'
+  gamesApiUrl: 'http://127.0.0.1:5000/api/',
+  competitorsApiUrl: 'http://127.0.0.1:5003/api/'
 };
 
 /*

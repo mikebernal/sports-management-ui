@@ -10,26 +10,45 @@ import { map, flatMap, catchError } from 'rxjs/operators';
 
 export class ApiService {
 
-  private apiUrl = environment.apiUrl;
+  private gamesApiUrl       = environment.gamesApiUrl;
+  private competitorsApiUrl = environment.competitorsApiUrl;
 
   constructor(
     private http: HttpClient
   ) { }
 
+  // Games
   get<T>(uri: string): Observable<T> {
-    return this.http.get<T>(`${this.apiUrl}${uri}`);
+    return this.http.get<T>(`${this.gamesApiUrl}${uri}`);
   }
 
-  post<T>(uri: string, game) {
-    return this.http.post<T>(`${this.apiUrl}${uri}`, game);
+  post<T>(uri: string, body) {
+    return this.http.post<T>(`${this.gamesApiUrl}${uri}`, body);
   }
 
-  put<T>(uri: string, game): Observable<T> {
-    return this.http.put<T>(`${this.apiUrl}${uri}`, game);
+  put<T>(uri: string, body): Observable<T> {
+    return this.http.put<T>(`${this.gamesApiUrl}${uri}`, body);
   }
 
   delete(uri: string, id: number): Observable<{}> {
-    return this.http.delete<{}>(`${this.apiUrl}${uri}${id}`);
+    return this.http.delete<{}>(`${this.gamesApiUrl}${uri}${id}`);
+  }
+
+  // Competitors
+  getC<T>(uri: string): Observable<T> {
+    return this.http.get<T>(`${this.competitorsApiUrl}${uri}`);
+  }
+
+  postC<T>(uri: string, body) {
+    return this.http.post<T>(`${this.competitorsApiUrl}${uri}`, body);
+  }
+
+  putC<T>(uri: string, body): Observable<T> {
+    return this.http.put<T>(`${this.competitorsApiUrl}${uri}`, body);
+  }
+
+  deleteC(uri: string, id: number): Observable<{}> {
+    return this.http.delete<{}>(`${this.competitorsApiUrl}${uri}${id}`);
   }
 
 }
